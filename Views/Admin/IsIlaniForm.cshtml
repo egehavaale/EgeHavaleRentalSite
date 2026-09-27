@@ -1,0 +1,82 @@
+@model EgeHavaleProjeOdevi.Models.IsIlani
+
+@{
+    ViewData["Title"] = Model.Id == 0 ? "Yeni İş İlanı Ekle" : "İş İlanı Düzenle";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0">@ViewData["Title"]</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="IsIlaniForm" method="post" enctype="multipart/form-data">
+                        <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="EklenmeTarihi" />
+                        <input type="hidden" asp-for="Aktif" />
+                        
+                        <div class="mb-3">
+                            <label asp-for="Ad" class="form-label">İlan Başlığı</label>
+                            <input asp-for="Ad" class="form-control" required />
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Sirket" class="form-label">Şirket Adı</label>
+                                <input asp-for="Sirket" class="form-control" required />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Pozisyon" class="form-label">Pozisyon</label>
+                                <input asp-for="Pozisyon" class="form-control" required />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Adres" class="form-label">Şehir / Konum</label>
+                                <input asp-for="Adres" class="form-control" required />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="CalismaTipi" class="form-label">Çalışma Tipi</label>
+                                <select asp-for="CalismaTipi" class="form-select">
+                                    <option value="Tam Zamanlı">Tam Zamanlı</option>
+                                    <option value="Yarı Zamanlı">Yarı Zamanlı</option>
+                                    <option value="Uzaktan (Remote)">Uzaktan (Remote)</option>
+                                    <option value="Stajyer">Stajyer</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Şirket Logosu veya Görsel (Dosya Yükle VEYA URL Gir)</label>
+                            <div class="input-group mb-2">
+                                <span class="input-group-text"><i class="bi bi-upload"></i> Dosya</span>
+                                <input type="file" name="uploadImage" class="form-control" accept="image/*" />
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-link"></i> URL</span>
+                                <input asp-for="GorselUrl" class="form-control" placeholder="https://..." />
+                            </div>
+                            @if (!string.IsNullOrEmpty(Model.GorselUrl))
+                            {
+                                <div class="mt-2">Mevcut Görsel: <img src="@Model.GorselUrl" width="100" class="img-thumbnail" /></div>
+                            }
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Detaylar" class="form-label">İlan Detayı (Gereksinimler vs.)</label>
+                            <textarea asp-for="Detaylar" class="form-control" rows="6"></textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="IsIlanlari" class="btn btn-secondary">İptal</a>
+                            <button type="submit" class="btn btn-danger"><i class="bi bi-save"></i> Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

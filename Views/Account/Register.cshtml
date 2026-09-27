@@ -1,0 +1,51 @@
+@model EgeHavaleProjeOdevi.Models.ApplicationUser
+
+@{
+    ViewData["Title"] = "Kayıt Ol";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">Yeni Kullanıcı Kaydı</h4>
+                </div>
+                <div class="card-body">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <form asp-action="Register" method="post">
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Adınız Soyadınız</label>
+                            <input type="text" name="adSoyad" class="form-control" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">E-Posta Adresi</label>
+                            <input type="email" name="email" class="form-control" required />
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Şifre</label>
+                            <input type="password" name="password" class="form-control" required />
+                            <div class="form-text">En az 6 karakter, 1 büyük harf ve 1 rakam içermelidir.</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Şifre (Tekrar)</label>
+                            <input type="password" name="confirmPassword" class="form-control" required />
+                        </div>
+                        
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Kayıt Ol</button>
+                        </div>
+                    </form>
+                    
+                    <div class="mt-3 text-center">
+                        <p>Zaten hesabınız var mı? <a asp-action="Login">Giriş Yapın</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

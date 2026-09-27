@@ -1,0 +1,65 @@
+@{
+    ViewData["Title"] = "Admin Paneli";
+}
+
+<div class="container mt-4">
+    <div class="row mb-4">
+        <div class="col-12 d-flex justify-content-between align-items-center">
+            <h2 class="fw-bold"><i class="bi bi-speedometer2 me-2 text-primary"></i>Yönetim Paneli</h2>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary"><i class="bi bi-box-arrow-up-right me-2"></i>Siteye Dön</a>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <!-- İstatistik Kartları -->
+        <div class="col-md-3">
+            <div class="card text-white bg-primary shadow">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-house-door me-2"></i>Emlak İlanları</h5>
+                    <p class="card-text fs-2 fw-bold">@ViewBag.EvCount</p>
+                    <a asp-action="Evler" class="text-white text-decoration-none">Yönet <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-white bg-success shadow">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-car-front me-2"></i>Vasıta İlanları</h5>
+                    <p class="card-text fs-2 fw-bold">@ViewBag.VasitaCount</p>
+                    <a asp-action="Vasitalar" class="text-white text-decoration-none">Yönet <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-white bg-warning text-dark shadow">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-box-seam me-2"></i>İkinci El İlanları</h5>
+                    <p class="card-text fs-2 fw-bold">@ViewBag.EsyaCount</p>
+                    <a asp-action="Esyalar" class="text-dark text-decoration-none">Yönet <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-white bg-danger shadow">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-briefcase me-2"></i>İş İlanları</h5>
+                    <p class="card-text fs-2 fw-bold">@ViewBag.IsIlaniCount</p>
+                    <a asp-action="IsIlanlari" class="text-white text-decoration-none">Yönet <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mt-4">
+            <div class="card bg-dark text-white shadow">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-people me-2"></i>Kayıtlı Kullanıcılar</h5>
+                    <p class="card-text fs-2 fw-bold">@ViewBag.UserCount</p>
+                    <span class="text-white-50">Tüm kullanıcılar</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

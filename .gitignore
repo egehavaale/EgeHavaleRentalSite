@@ -1,0 +1,111 @@
+# ==============================================================================
+# ASP.NET / .NET & VISUAL STUDIO
+# ==============================================================================
+
+# Build results and binaries
+[Bb]in/
+[Oo]bj/
+[Lls]og/
+[Ll]ogs/
+[Tt]emp/
+[D3d]compiler*.dll
+
+# Visual Studio & VS Code metadata
+.vs/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains IDEs
+.idea/
+*.sln.iml
+
+# NuGet Packages
+*.nupkg
+**/packages/
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+# ASP.NET User Secrets & Local App Settings
+appsettings.Development.json
+appsettings.Local.json
+*.UserSecrets.xml
+
+# Entity Framework / Migrations artifacts
+*.db
+*.sqlite
+*.sqlite3-journal
+
+# Project test outputs & coverage reports
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+
+# ==============================================================================
+# LARAVEL / PHP & COMPOSER
+# ==============================================================================
+
+# Composer dependencies
+/vendor/
+
+# Environment files (sensitive keys/credentials)
+.env
+.env.backup
+.env.production
+!.env.example
+
+# Laravel runtime, caches, storage, and logs
+/storage/*.key
+/storage/app/*
+!/storage/app/.gitignore
+/storage/framework/cache/*
+!/storage/framework/cache/.gitignore
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitignore
+/storage/framework/views/*
+!/storage/framework/views/.gitignore
+/storage/logs/*
+!/storage/logs/.gitignore
+
+# Laravel Artisan / Caching outputs
+/bootstrap/cache/*
+!/bootstrap/cache/.gitignore
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+
+# Node & Frontend Build Tooling (Mix / Vite / Tailwind)
+/node_modules/
+/public/build/
+/public/hot/
+/public/storage
+
+
+# ==============================================================================
+# GENERAL SYSTEM & OS FILES
+# ==============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
